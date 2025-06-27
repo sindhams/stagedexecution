@@ -1,0 +1,18 @@
+{
+  "action_plan_name": "deploy_project",
+  "stages": [
+    {
+      "name": "build",
+      "steps": [
+        {"name": "compile_code", "command": "echo Compiling", "depends_on": []},
+        {"name": "run_tests", "command": "echo Testing", "depends_on": ["compile_code"]}
+      ]
+    },
+    {
+      "name": "deploy",
+      "steps": [
+        {"name": "upload_artifacts", "command": "echo Uploading", "depends_on": ["run_tests"]}
+      ]
+    }
+  ]
+}
